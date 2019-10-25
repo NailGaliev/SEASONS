@@ -1,0 +1,16 @@
+"C:\Users\User\IdeaProjects\untitled1222\out\production\cdvig" com.company.Main
+
+¬ведите размер массива: 4
+
+¬ведите сдвиг 2
+
+2 1 3 3
+
+3
+
+3
+
+2
+
+1
+

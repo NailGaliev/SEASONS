@@ -1,0 +1,8 @@
+"C:\Users\User\IdeaProjects\untitled1222\out\production\untitled1222" com.company.Main
+0 
+0 0 
+0 0 0 
+0 0 0 0 
+0 0 0 0 0 
+
+Process finished with exit code 0
