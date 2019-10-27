@@ -1,0 +1,10 @@
+1 4 5 2 
+6 8 7 7 
+6 10 10 3 
+5 1 9 6 
+Line #1: min = 1;
+Line #2: min = 6;
+Line #3: min = 3;
+Line #4: min = 1;
+
+Process finished with exit code 0
