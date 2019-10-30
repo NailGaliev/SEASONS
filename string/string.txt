@@ -1,0 +1,31 @@
+String str ="C:\\ Users \\ User \\ IdeaProject \\ string \\ main .java";
+Scanner sc = new Scanner(str);
+while(sc.hasNext()){
+    if(sc.hasNext("main")){
+        System.out.println(sc.next());
+    }else if (sc.hasNextInt()){
+        System.out.println(sc.hasNextInt());
+
+    }else{
+        sc.next();
+    }
+
+}
+
+    }
+String str ="C:\\ Users \\ User \\ IdeaProject \\ string \\ main. java";
+Scanner sc = new Scanner(str);
+while(sc.hasNext()){
+    if(sc.hasNext("java")){
+        System.out.println(sc.next());
+  
+
+
+main
+
+
+java
+
+Process finished with exit code 0
+  
+  
