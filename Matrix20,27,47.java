@@ -53,6 +53,8 @@ public class Matrix202747 {
             }
             System.out.printf("Line #%d: min = %d;\n", i + 1, min);
         }
+
+        // вторая часть задания найти максимальный среди найденных минимальных.
     }
 
 
@@ -61,7 +63,23 @@ public class Matrix202747 {
 
 
 
+/*
+три меина в классе это да. 
+по задаче, что-то пошло не так.
 
+5 10 5 
+1 7 3 
+10 5 1 
+enter k = 
+2
+enter k1 = 
+1
+5 10 10 
+1 7 7 
+10 5 5 
+
+
+*/
     public static void main(String[] args) {
         int M = 3;
         int N = 3;

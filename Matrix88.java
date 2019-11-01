@@ -25,6 +25,8 @@ public class Matrix88 {
          System.out.println();
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
+                // а если матрица 100х100? тоже так будете перебирать?
+                // здесь достоточно добавить условия if, которое проверяет i и j.
                 matrixB[1][0]=0;
                 matrixB[2][0]=0;
                 matrixB[2][1]=0;

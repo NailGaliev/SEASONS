@@ -26,7 +26,8 @@ import java.util.Scanner;
    // }
  public class Main {
 
-
+// Решено наполовину. Нет сканнера с вводом n. Для решения этой задачи двумерный массив не требуется. 
+// Достаточно двух циклов с одним условием.
        public static void main(String[] args) {
            int[][] a1 = new int[5][];
            a1[0] = new int[1];

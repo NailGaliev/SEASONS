@@ -13,7 +13,7 @@ public class sdvig {
         int x = in.nextInt();
         int temp = 0;
         for (int i = 0;i < arr.length;i++)
-            arr[i] = (int) ( Math.random() * n);
+            arr[i] = (int) ( Math.random() * n); // здесь умножать на n не очень уместно. лучше его зафиксировать, например, сделать 10 или 100.
         for (int i : arr)
             System.out.print(i + " ");
         System.out.println();
