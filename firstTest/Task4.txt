@@ -1,0 +1,4 @@
+Enter n = 3
+Chislo prostoe 
+
+Process finished with exit code 0
