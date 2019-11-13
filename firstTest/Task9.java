@@ -1,11 +1,11 @@
-package com.company;
-
 import java.util.Scanner;
 
 public class Task9 {
 
 
-
+            /**
+              * Зачтено.
+              */
 
             public static void main (String[] args) {
                 System.out.println("Enter test sen:");

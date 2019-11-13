@@ -1,11 +1,11 @@
-package com.company;
-
 import java.io.FileWriter;
 import java.io.IOException;
 
 public class Task6 {
 
-
+    /**
+     * Зачтено. Нет проверки на последнюю бутылку.
+     */
     public static void main(String[] args) throws IOException {
             FileWriter fw = new FileWriter("text.txt");
             int bottle = 99;

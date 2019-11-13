@@ -1,11 +1,12 @@
-package com.company;
-
 import com.sun.scenario.effect.impl.sw.java.JSWBlend_SRC_OUTPeer;
 
 import java.util.Scanner;
 
 public class Task3 {
 
+    /**
+     * Что-то совсем не так.
+     */
     public static void main(String[] args) {
 
         double f1 = 0.0;
