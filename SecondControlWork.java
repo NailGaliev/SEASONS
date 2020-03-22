@@ -1,6 +1,3 @@
-package com.company;
-
-
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -8,21 +5,21 @@ import java.io.IOException;
 import java.util.Scanner;
 
 /**
-
  * Студент %surname% %initials%
-
+ * <p>
  * Группа %group%
-
+ * <p>
  * Высшая школа информационных технологий и систем
-
+ * <p>
  * Казанский (Приволжский) федеральный университет
-
- *
-
+ * <p>
+ * <p>
+ * <p>
  * Контрольная работа №2.
-
- *
-
+ * <p>
+ * <p>
+ * Максимальный балл 15.
+ * Итого: 4.25.
  */
 
 public class SecondControlWork {
@@ -32,27 +29,26 @@ public class SecondControlWork {
         String filename = "MOCK_DATA.csv";
         Users users = new Users(filename);
         users.save();
-        users.findUsersWithParam("id","200","out.txt");
+//        users.findUsersWithParam("id", "200", "out.txt");
 
     }
 }
 
 
-
-
-
-
-
 /**
-
  * 1. Считать файл csv в массив, каждая строка (кроме первой) которого является объектом типа User (см. задание 2).
-
+ * <p>
  * Реализовать методы load, save, saveAs.
-
+ * <p>
  * Реализовать метод getUserById, получающий объект типа User, по id (id != номер строки).
-
- *
-
+ * <p>
+ * Проверка:
+ * Чтение csv в массив юзеров: 0.25
+ * load: 0.25
+ * save: 0.5
+ * getUserById: +
+ * test: 0
+ * Итого (макс. 5 баллов): 0.75
  */
 
 class Users {
@@ -72,8 +68,9 @@ class Users {
         sc.useDelimiter(";");
         int i = 0;
         while (sc.hasNextLine()) {
-            users[i] = new User(sc.nextInt(), sc.next(), sc.next(), sc.next(), sc.next() == "Male" ? Gender.Male : Gender.Female,
-                    sc.next(), sc.next(), sc.next());
+            users[i] = new User(
+                    sc.nextInt(), sc.next(), sc.next(), sc.next(), sc.next() == "Male" ? Gender.Male : Gender.Female,
+                    sc.nextInt(), sc.next(), sc.next());
         }
     }
 
@@ -92,15 +89,15 @@ class Users {
             fw.write(user.toString() + "\n");
         }
     }
+
     public User getUserById(int id) {
-        for (User user : users){
-            if (user.getId() == id){
+        for (User user : users) {
+            if (user.getId() == id) {
                 return user;
             }
         }
         return null;
-
-
+    }
 
 
 //    load()
@@ -113,82 +110,99 @@ class Users {
 
 //    findUsersWithParam(String haystack, String needle) (см. задание 4.).
 
-}
+//    }
 
     public void findUsersWithParam(String haystack, String needle, String fileName) throws IOException {
         FileWriter fw = new FileWriter(fileName);
         switch (haystack) {
             case "id": {
-                for (User user : users){
-                    if (("" + user.getId()).equals(needle)){
+                for (User user : users) {
+                    if (("" + user.getId()).equals(needle)) {
                         fw.write(user.toString());
                     }
                 }
             }
             case "first_name": {
-                for (User user : users){
-                    if (user.getLastname.equals(needle)){
+                for (User user : users) {
+                    if (user.getLastname.equals(needle)) {
                         fw.write(user.toString());
                     }
                 }
             }
             case "last_name": {
-                for (User user : users){
-                    if (user.getLastname.equals(needle)){
+                for (User user : users) {
+                    if (user.getLastname.equals(needle)) {
                         fw.write(user.toString());
                     }
                 }
             }
             case "email": {
-                for (User user : users){
-                    if (user.getEmail().equals(needle)){
+                for (User user : users) {
+                    if (user.getEmail().equals(needle)) {
                         fw.write(user.toString());
                     }
                 }
             }
             case "gender": {
-                for (User user : users){
-                    if (("" + user.getGender()).equals(needle)){
+                for (User user : users) {
+                    if (("" + user.getGender()).equals(needle)) {
                         fw.write(user.toString());
                     }
                 }
             }
             case "money": {
-                for (User user : users){
-                    if (user.getMoney().equals(needle)){
+                for (User user : users) {
+                    if (user.getMoney().equals(needle)) {
                         fw.write(user.toString());
                     }
                 }
             }
             case "country": {
-                for (User user : users){
-                    if (user.getCountry().equals(needle)){
+                for (User user : users) {
+                    if (user.getCountry().equals(needle)) {
                         fw.write(user.toString());
                     }
                 }
             }
         }
+    }
+}
 
 
-        /**
+/**
+ * 2. Создать класс юзер, с полями из CSV файла. Все геттеры/сеттеры + toString. Пол через Enum.
+ * <p>
+ * Проверка:
+ *   User: 0.5
+ *   getters/setters: +
+ *   toString: +
+ *   enum: 0.5
+ *   test: -
+ * Итого (макс. 5 баллов): 3
+ * 3. В первой строке файла содержатся заголовки таблицы.
+ * <p>
+ * Создать метод, позволяющий получить номер столбца, по его названию, например, getColByName("name").
+ * <p>
+ * Проверка:
+ *   getColByName:
+ *   test:
+ * Итого (макс. 2 балла): -
 
-     * 2. Создать класс юзер, с полями из CSV файла. Все геттеры/сеттеры + toString. Пол через Enum.
-
-     * 3. В первой строке файла содержатся заголовки таблицы.
-
-     * Создать метод, позволяющий получить номер столбца, по его названию, например, getColByName("name").
-
-     * 4. Создать boolean метод, возвращающий true если пара название/номер столбца и значение соответствует введенным.
-
-     * Используя его, создать метод в тестовом классе, который получит строки по названию опрделенной должности/стране,
-
-     * и сохранит его в другой файл csv.
-
-     */
+ * 4. Создать boolean метод, возвращающий true если пара название/номер столбца и значение соответствует введенным.
+ * <p>
+ * Используя его, создать метод в тестовом классе, который получит строки по названию опрделенной должности/стране,
+ * <p>
+ * и сохранит его в другой файл csv.
+ * Проверка:
+ *   boolean equals: - 
+ *   findUsersWithParam: 0.5
+ *   test save: -
+ * Итого (макс. 3 балла):  0.5
+ */
 
 class User {
 
-    int id,money;
+    int id, money; // если делаете деньги число, то их нужно переводить в них. к тому же деньги не целочислены.
     String first_name, last_name, email, country, job;
     Gender gender;
 
@@ -262,9 +276,6 @@ class User {
     }
 
 
-
-
-
     public String getCountry() {
         return country;
     }
@@ -274,39 +285,31 @@ class User {
     }
 
 
+    public String toString() {
+        return id + "  " + first_name + "  " + last_name + "  " + email + "  " + money + "  " + country + "  " + job + "  " + gender;
+    }
 
 
-     public String toString() {
-         return id + "  " + first_name + "  " + last_name + "  " + email +"  " + money + "  " + country + "  " + job + "  " + gender;
-     }
-
-
-
-
+}
 
 enum Gender {
     Female, Male;
-    }
 }
 
 
-
 /**
-
  * 5. Имплементировать класс User, от интерфейса Measurable.
-
+ * <p>
  * Реализовать метод getMeasure().
-
+ * <p>
  * Реализовать статичные и дефолтные методы в интерфейсе.
-
+ * <p>
  * Добавить в main-е выполнение этих методов.
-
  */
 
 interface Measurable {
 
     double getMeasure();
-
 
 
     static double getAverage(Measurable[] list) {
@@ -316,13 +319,11 @@ interface Measurable {
     }
 
 
-
     static double getMaximum(Measurable[] list) {
 
         return 0;
 
     }
-
 
 
     static double getMinimum(Measurable[] list) {
@@ -332,8 +333,7 @@ interface Measurable {
     }
 
 
-
-    default boolean isGreaterThan(Measurable other){
+    default boolean isGreaterThan(Measurable other) {
 
         return false;
 
